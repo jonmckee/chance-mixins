@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-      - run: echo $${ github.event.inputs.version }}
+      - run: echo $${github.event.inputs.version}}
       - run: npm ci
       - run: npm run coverage
 
@@ -30,7 +30,7 @@ jobs:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
-      - run: npm version $${ github.event.inputs.version }}
+      - run: npm version $${github.event.inputs.version}}
       - run: git push
       - run: npm publish
         env:
