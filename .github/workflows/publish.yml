@@ -29,11 +29,11 @@ jobs:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
-      - run: npm version ${{github.event.inputs.version}}
       - run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'jonrmckee@gmail.com'
-          git push
+      - run: npm version ${{github.event.inputs.version}}
+      - run: git push
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
