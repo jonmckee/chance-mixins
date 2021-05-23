@@ -1,15 +1,16 @@
 {
   "name": "@jonmckee/chance-mixins",
   "version": "0.0.1-beta",
+  "author": "Jon McKee",
   "description": "Custom mixins for chance js",
   "main": "src/index.js",
   "type": "module",
+  "license": "ISC",
+  "release": {},
   "scripts": {
     "coverage": "NODE_OPTIONS=--experimental-vm-modules npx jest --coverage",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
   },
-  "author": "Jon McKee",
-  "license": "ISC",
   "devDependencies": {
     "chance": "^1.1.7",
     "deepfreeze": "^2.0.0",
@@ -27,7 +28,9 @@
         "statements": 100
       }
     },
-    "setupFiles": ["<rootDir>/test/setup.js"],
+    "setupFiles": [
+      "<rootDir>/test/setup.js"
+    ],
     "transform": {}
   }
 }
