@@ -3,7 +3,7 @@ export default (chance) => (arr) => {
         throw new Error('Chance: Cannot partition an empty array.');
     } else if (arr.length === 1) {
         const [item] = arr;
-        
+
         return chance.shuffle([
             [item],
             []
