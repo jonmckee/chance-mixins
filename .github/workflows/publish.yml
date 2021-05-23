@@ -33,7 +33,7 @@ jobs:
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'jonrmckee@gmail.com'
       - run: npm version ${{github.event.inputs.version}}
+      - run: git push --follow-tags
       - run: npm publish
-      - run: git push
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
