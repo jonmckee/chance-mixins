@@ -15,7 +15,7 @@ jobs:
       - run: npm ci
       - run: npm run coverage
 
-  publish-gpr:
+  publish:
     needs: build
     runs-on: ubuntu-latest
     steps:
