@@ -1,5 +1,5 @@
 {
-  "name": "@incipal/chance-mixins",
+  "name": "@jonmckee/chance-mixins",
   "version": "1.2.4",
   "description": "Custom mixins for chance js",
   "main": "src/index.js",
