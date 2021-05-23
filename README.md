@@ -5,14 +5,14 @@ Custom mixins for [chance](https://chancejs.com/), a javascript library for crea
 ## Installation
 
 ```bash
-npm install @incipal/chance-mixins
+npm install @jonmckee/chance-mixins
 ```
 
 ## Setup
 
 ```es6
 import Chance from 'chance';
-import chanceMixins from '@incipal/chance-mixins';
+import chanceMixins from '@jonmckee/chance-mixins';
 
 const chance = new Chance();
 chanceMixins(chance);
