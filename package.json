@@ -14,7 +14,7 @@
   "devDependencies": {
     "chance": "^1.1.7",
     "deepfreeze": "^2.0.0",
-    "jest": "^26.6.3"
+    "jest": "^27.0.3"
   },
   "peerDependencies": {
     "chance": "^1.1.7"
@@ -32,5 +32,8 @@
       "<rootDir>/test/setup.js"
     ],
     "transform": {}
+  },
+  "dependencies": {
+    "@jest/globals": "^27.0.3"
   }
 }
