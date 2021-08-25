@@ -1,37 +1,47 @@
-## Welcome to GitHub Pages
+# chance-mixins
 
-You can use the [editor on GitHub](https://github.com/jonmckee/chance-mixins/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+Custom mixins for [chance](https://chancejs.com/), a javascript library for creating randomized data.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Installation
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```bash
+npm install @jonmckee/chance-mixins
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Setup
 
-### Jekyll Themes
+```es6
+import Chance from 'chance';
+import chanceMixins from '@jonmckee/chance-mixins';
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jonmckee/chance-mixins/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+const chance = new Chance();
+chanceMixins(chance);
+```
 
-### Support or Contact
+## Usage
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```es6
+// Create an object with a random key and value
+chance.object();
+=> { upe: 'dafpiwoc' }
+
+// Given an array, return a random index within the bounds
+chance.pickIndex(['cat', 'dog', 'mouse', 'dinosaur']);
+=> 2
+
+// Given an array, select a random subset of items in that array
+chance.pickSubset(['cat', 'dog', 'mouse', 'goomba', 'alien']);
+=> ['cat', 'goomba', 'alien']
+
+// Given an array, make sure the selected subset is missing at least 1 element from the given array
+chance.pickSubset([1, 2, 3, 4, 5], {proper: true});
+
+// Given an array, partition it into two subsets
+chance.partition(['cat', 'dog', 'mouse', 'goomba', 'alien']);
+=> [['cat', 'dog'], ['mouse', 'goomba', 'alien']]
+```
+
+### Contributing
+Pull requests are welcome. For major changes, please open an issue to discuss what you would like to add.
+
+Please make sure to update tests and this README as appropriate.
