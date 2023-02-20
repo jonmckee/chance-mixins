@@ -39,7 +39,7 @@ jobs:
       - run: npm ci
       - run: |
           git config --global user.name 'GitHub Actions'
-          git config --global user.email 'jonrmckee@gmail.com'
+          git config --global user.email 'jonmckee@users.noreply.github.com'
       - run: npm version ${{github.event.inputs.version}}
       - run: git push --follow-tags
       - run: npm publish
