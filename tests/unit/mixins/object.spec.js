@@ -1,5 +1,9 @@
 import Chance from 'chance';
+import chanceMixins from '../../../src';
+
 const chance = new Chance();
+
+chanceMixins(chance);
 
 describe('Chance.object', () => {
     let object;

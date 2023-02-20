@@ -1,8 +1,9 @@
-import mixins from '../../src/index';
 import Chance from 'chance';
+import chanceMixins from "../../src/index.js";
 
 const chance = new Chance();
-mixins(chance);
+
+chanceMixins(chance);
 
 describe('when importing chance-mixins', () => {
     it.each([

@@ -1,7 +1,10 @@
 import Chance from 'chance';
 import deepFreeze from 'deepfreeze';
+import chanceMixins from "../../../src/index.js";
 
 const chance = new Chance();
+
+chanceMixins(chance);
 
 describe('Chance.pickSubset', () => {
     let subset,
