@@ -14,34 +14,11 @@ on:
           - major
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: npm ci
-      - run: npm run coverage
+  verify:
+    uses: jonmckee/actions/.github/workflows/verify.yml@main
 
   publish:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      packages: write
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'jonmckee@users.noreply.github.com'
-      - run: npm version ${{github.event.inputs.version}}
-      - run: git push --follow-tags
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    needs: verify
+    uses: jonmckee/actions/.github/workflows/publish.yml@main
+    with:
+      version: ${{ inputs.version }}
